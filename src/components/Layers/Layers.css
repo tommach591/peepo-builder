@@ -1,0 +1,35 @@
+.Layers {
+  width: 6rem;
+  height: 512px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  overflow-y: auto;
+  overflow-x: hidden;
+
+  margin-left: 1rem;
+  margin-right: 1rem;
+}
+
+.Layer {
+  width: 4rem;
+  height: 4rem;
+  position: relative;
+}
+
+.Image {
+  width: 100%;
+  height: 100%;
+}
+
+.Remove {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+}
+
+.Remove:hover {
+  cursor: pointer;
+}

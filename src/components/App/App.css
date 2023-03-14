@@ -1,0 +1,21 @@
+.App {
+  width: 100vw;
+  height: 100vh;
+
+  display: flex;
+}
+
+.Selection {
+  display: flex;
+  flex-direction: column;
+}
+
+.Display {
+  display: flex;
+
+  margin: 1rem;
+}
+
+@media (max-width: 1024px) {
+}
+
