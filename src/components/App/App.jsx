@@ -42,12 +42,12 @@ function App() {
         <div className="Sample"></div>
       </div>
       <div className="Display">
+        <MyCanvas uploadedImages={uploadedImages} />
         <Layers
           uploadedImages={uploadedImages}
           removeImage={removeImage}
           swapImages={swapImages}
         />
-        <MyCanvas uploadedImages={uploadedImages} />
       </div>
     </div>
   );

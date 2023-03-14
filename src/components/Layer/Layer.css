@@ -1,3 +1,24 @@
+.Layer {
+  width: 64px;
+  height: 64px;
+  position: relative;
+}
+
 .Layer:hover {
   cursor: grab;
+}
+
+.Image {
+  width: 100%;
+  height: 100%;
+}
+
+.Remove {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+}
+
+.Remove:hover {
+  cursor: pointer;
 }
