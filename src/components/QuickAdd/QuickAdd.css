@@ -1,4 +1,4 @@
-.Layer {
+.QuickAdd {
   width: 64px;
   height: 64px;
   position: relative;
@@ -6,12 +6,8 @@
   margin: 0.25rem;
 }
 
-.Layer:hover {
-  cursor: grab;
-}
-
-.Layer > h1 {
-  position: absolute;
+.QuickAdd:hover {
+  cursor: pointer;
 }
 
 .Image {

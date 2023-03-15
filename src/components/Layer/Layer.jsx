@@ -30,12 +30,13 @@ function Layer({ removeImage, swapImages, image, index }) {
   return (
     <div
       className="Layer"
-      ref={(el) => {
-        dragRef(el);
-        dropRef(el);
+      ref={(div) => {
+        dragRef(div);
+        dropRef(div);
       }}
     >
-      <img className="Image" src={URL.createObjectURL(image)} alt="" />
+      <h1>{index + 1}</h1>
+      <img className="Image" src={image} alt="" />
       <img
         className="Remove"
         onClick={() => removeImage(index)}

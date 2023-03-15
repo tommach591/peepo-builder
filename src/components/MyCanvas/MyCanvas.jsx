@@ -9,8 +9,7 @@ function MyCanvas({ uploadedImages }) {
   useEffect(() => {
     const imageToURL = [];
     imageToURL.unshift(Blank);
-    for (const image of uploadedImages)
-      imageToURL.unshift(URL.createObjectURL(image));
+    for (const image of uploadedImages) imageToURL.unshift(image);
     mergeImages(imageToURL).then((result) => setMergedImage(result));
   }, [uploadedImages]);
 
@@ -18,7 +17,7 @@ function MyCanvas({ uploadedImages }) {
     <div className="MyCanvas">
       <img src={mergedImage} alt="" />
       <a className="Download" href={mergedImage} download="mypeepo">
-        <button type="button">Download Peepo</button>
+        <button type="button">Download</button>
       </a>
     </div>
   );

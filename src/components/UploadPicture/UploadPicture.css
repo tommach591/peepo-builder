@@ -1,5 +1,10 @@
 .UploadPicture {
   margin: 1rem;
+  margin-top: 0rem;
+}
+
+.UploadPicture > h1 {
+  margin: 0.25rem;
 }
 
 @media (max-width: 1024px) {

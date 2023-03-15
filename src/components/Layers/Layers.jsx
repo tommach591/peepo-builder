@@ -4,6 +4,7 @@ import "./Layers.css";
 function Layers({ uploadedImages, removeImage, swapImages }) {
   return (
     <div className="Layers">
+      <h1>Layers</h1>
       {uploadedImages.map((image, i) => {
         return (
           <Layer

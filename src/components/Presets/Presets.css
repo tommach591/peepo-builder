@@ -1,0 +1,27 @@
+.Presets {
+  width: 22rem;
+  height: 17.5rem;
+
+  border: 1px solid black;
+  border-radius: 5px;
+
+  overflow-x: hidden;
+  overflow-y: scroll;
+
+  margin: 1rem;
+}
+
+.Presets > h1 {
+  width: 100%;
+
+  padding: 0.25rem;
+  text-align: center;
+
+  border-bottom: 1px solid black;
+}
+
+.PresetsGrid {
+  display: grid;
+  grid-template-columns: repeat(5, 64px);
+  gap: 6px;
+}

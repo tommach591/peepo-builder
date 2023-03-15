@@ -2,10 +2,29 @@ import "./App.css";
 import { useCallback, useState } from "react";
 import UploadPicture from "../UploadPicture";
 import Layers from "../Layers";
-import MyCanvas from "../MyCanvas/MyCanvas";
+import MyCanvas from "../MyCanvas";
+import History from "../History";
+import Presets from "../Presets";
 
 function App() {
   const [uploadedImages, setUploadedImages] = useState([]);
+  const [history, setHistory] = useState([]);
+
+  const addHistory = useCallback(
+    (newImage) => {
+      setHistory([newImage, ...history]);
+    },
+    [history]
+  );
+
+  const removeHistory = useCallback(
+    (index) => {
+      let newHistory = [...history];
+      newHistory.splice(index, 1);
+      setHistory(newHistory);
+    },
+    [history]
+  );
 
   const insertImage = useCallback(
     (newImage) => {
@@ -24,12 +43,9 @@ function App() {
   );
 
   const swapImages = useCallback(
-    (i, j) => {
+    (to, from) => {
       let newUploadedImages = [...uploadedImages];
-      [newUploadedImages[i], newUploadedImages[j]] = [
-        newUploadedImages[j],
-        newUploadedImages[i],
-      ];
+      newUploadedImages.splice(to, 0, newUploadedImages.splice(from, 1));
       setUploadedImages(newUploadedImages);
     },
     [uploadedImages]
@@ -38,8 +54,13 @@ function App() {
   return (
     <div className="App">
       <div className="Selection">
-        <UploadPicture insertImage={insertImage} />
-        <div className="Sample"></div>
+        <Presets insertImage={insertImage} />
+        <History
+          history={history}
+          insertImage={insertImage}
+          removeHistory={removeHistory}
+        />
+        <UploadPicture insertImage={insertImage} addHistory={addHistory} />
       </div>
       <div className="Display">
         <MyCanvas uploadedImages={uploadedImages} />
