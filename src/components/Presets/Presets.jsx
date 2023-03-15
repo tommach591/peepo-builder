@@ -1,12 +1,12 @@
-import { Samples } from "../../utils/GetSamples";
+import { getSamples } from "../../utils/GetSamples";
 import QuickAdd from "../QuickAdd";
 import "./Presets.css";
 
 function Presets({ insertImage }) {
-  const samples = Samples;
+  const samples = getSamples();
   return (
     <div className="Presets">
-      <h1>Presets</h1>
+      <h1>Samples</h1>
       <div className="PresetsGrid">
         {samples.map((image, i) => {
           return (
