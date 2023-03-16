@@ -1,6 +1,6 @@
 .Layers {
   width: 6rem;
-  height: 512px;
+  height: 750px;
 
   display: flex;
   flex-direction: column;
@@ -9,10 +9,12 @@
   overflow-y: auto;
   overflow-x: hidden;
 
-  margin: 1rem;
+  margin-top: 1rem;
 
   border: 1px solid black;
   border-radius: 5px;
+
+  background: white;
 }
 
 .Layers > h1 {

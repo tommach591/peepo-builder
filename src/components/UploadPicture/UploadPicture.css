@@ -1,10 +1,19 @@
 .UploadPicture {
+  width: 100%;
+
   margin: 1rem;
-  margin-top: 0rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .UploadPicture > h1 {
-  margin: 0.25rem;
+  margin-right: auto;
+  font-size: 14px;
+}
+
+.UploadPicture > input {
+  width: 12rem;
 }
 
 @media (max-width: 1024px) {

@@ -53,22 +53,28 @@ function App() {
 
   return (
     <div className="App">
-      <div className="Selection">
-        <Presets insertImage={insertImage} />
-        <History
-          history={history}
-          insertImage={insertImage}
-          removeHistory={removeHistory}
-        />
-        <UploadPicture insertImage={insertImage} addHistory={addHistory} />
+      <div className="Header">
+        <h1>Peepo Builder</h1>
       </div>
-      <div className="Display">
-        <MyCanvas uploadedImages={uploadedImages} />
-        <Layers
-          uploadedImages={uploadedImages}
-          removeImage={removeImage}
-          swapImages={swapImages}
-        />
+      <div className="Bottom">
+        <div className="Selection">
+          <Presets insertImage={insertImage} />
+          <History
+            history={history}
+            insertImage={insertImage}
+            removeHistory={removeHistory}
+          />
+          <UploadPicture insertImage={insertImage} addHistory={addHistory} />
+          <h2>Canvas Size: 1000x1000px</h2>
+        </div>
+        <div className="Display">
+          <MyCanvas uploadedImages={uploadedImages} />
+          <Layers
+            uploadedImages={uploadedImages}
+            removeImage={removeImage}
+            swapImages={swapImages}
+          />
+        </div>
       </div>
     </div>
   );

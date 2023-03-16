@@ -4,10 +4,12 @@
   position: relative;
 
   margin: 0.25rem;
+  border-radius: 5px;
 }
 
 .QuickAdd:hover {
   cursor: pointer;
+  background: rgba(0, 0, 0, 0.15);
 }
 
 .Image {

@@ -3,7 +3,7 @@ import "./UploadPicture.css";
 function UploadPicture({ insertImage, addHistory }) {
   return (
     <div className="UploadPicture">
-      <h1>Upload PNG</h1>
+      <h1>Upload PNG:</h1>
       <input
         type="file"
         accept="image/png"
