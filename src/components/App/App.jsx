@@ -1,5 +1,6 @@
 import "./App.css";
 import { useCallback, useState } from "react";
+import { useMobile } from "../../utils/useMobile";
 import UploadPicture from "../UploadPicture";
 import Layers from "../Layers";
 import MyCanvas from "../MyCanvas";
@@ -9,6 +10,7 @@ import Presets from "../Presets";
 function App() {
   const [uploadedImages, setUploadedImages] = useState([]);
   const [history, setHistory] = useState([]);
+  const isMobile = useMobile();
 
   const addHistory = useCallback(
     (newImage) => {
@@ -25,6 +27,10 @@ function App() {
     },
     [history]
   );
+
+  const clearHistory = useCallback(() => {
+    setHistory([]);
+  }, []);
 
   const insertImage = useCallback(
     (newImage) => {
@@ -51,33 +57,79 @@ function App() {
     [uploadedImages]
   );
 
-  return (
-    <div className="App">
-      <div className="Header">
-        <h1>Peepo Builder</h1>
-      </div>
-      <div className="Bottom">
-        <div className="Selection">
-          <Presets insertImage={insertImage} />
-          <History
-            history={history}
-            insertImage={insertImage}
-            removeHistory={removeHistory}
-          />
-          <UploadPicture insertImage={insertImage} addHistory={addHistory} />
-          <h2>Canvas Size: 1000x1000px</h2>
+  const clearLayers = useCallback(() => {
+    setUploadedImages([]);
+  }, []);
+
+  const getMobile = () => {
+    return (
+      <div className="App">
+        <div className="Header">
+          <h1>Peepo Builder</h1>
         </div>
-        <div className="Display">
-          <MyCanvas uploadedImages={uploadedImages} />
-          <Layers
-            uploadedImages={uploadedImages}
-            removeImage={removeImage}
-            swapImages={swapImages}
-          />
+        <div className="Bottom">
+          <div className="Selection">
+            <div className="Display">
+              <MyCanvas uploadedImages={uploadedImages} />
+              <Layers
+                uploadedImages={uploadedImages}
+                removeImage={removeImage}
+                swapImages={swapImages}
+                clearLayers={clearLayers}
+              />
+            </div>
+            <Presets insertImage={insertImage} />
+            <History
+              history={history}
+              insertImage={insertImage}
+              removeHistory={removeHistory}
+            />
+            <button className="Clear" onClick={() => clearHistory()}>
+              Clear History
+            </button>
+            <UploadPicture insertImage={insertImage} addHistory={addHistory} />
+            <h2>Canvas size: 1000x1000px</h2>
+          </div>
         </div>
       </div>
-    </div>
-  );
+    );
+  };
+
+  const getWeb = () => {
+    return (
+      <div className="App">
+        <div className="Header">
+          <h1>Peepo Builder</h1>
+        </div>
+        <div className="Bottom">
+          <div className="Selection">
+            <Presets insertImage={insertImage} />
+            <History
+              history={history}
+              insertImage={insertImage}
+              removeHistory={removeHistory}
+            />
+            <button className="Clear" onClick={() => clearHistory()}>
+              Clear History
+            </button>
+            <UploadPicture insertImage={insertImage} addHistory={addHistory} />
+            <h2>Canvas size: 1000x1000px</h2>
+          </div>
+          <div className="Display">
+            <MyCanvas uploadedImages={uploadedImages} />
+            <Layers
+              uploadedImages={uploadedImages}
+              removeImage={removeImage}
+              swapImages={swapImages}
+              clearLayers={clearLayers}
+            />
+          </div>
+        </div>
+      </div>
+    );
+  };
+
+  return isMobile ? getMobile() : getWeb();
 }
 
 export default App;

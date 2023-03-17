@@ -26,3 +26,10 @@
 .Remove:hover {
   cursor: pointer;
 }
+
+@media (max-width: 1024px) {
+  .QuickAdd {
+    width: 48px;
+    height: 48px;
+  }
+}

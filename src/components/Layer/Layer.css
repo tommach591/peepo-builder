@@ -35,3 +35,14 @@
 .Remove:hover {
   cursor: pointer;
 }
+
+@media (max-width: 1024px) {
+  .Layer {
+    width: 48px;
+    height: 48px;
+  }
+
+  .Remove {
+    width: 0.75rem;
+  }
+}

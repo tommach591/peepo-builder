@@ -27,3 +27,16 @@
   grid-template-columns: repeat(5, 64px);
   gap: 6px;
 }
+
+@media (max-width: 1024px) {
+  .History {
+    height: 7rem;
+    font-size: 11px;
+    margin: 0.5rem;
+  }
+
+  .HistoryGrid {
+    grid-template-columns: repeat(5, 48px);
+    gap: 18px;
+  }
+}

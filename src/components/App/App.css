@@ -21,6 +21,7 @@
 
 .Header > h1 {
   font-size: 24px;
+  font-weight: bold;
   margin: 1rem;
 }
 
@@ -31,7 +32,7 @@
 
 .Selection {
   width: 22rem;
-  height: 100%;
+  height: fit-content;
   display: flex;
   flex-direction: column;
 
@@ -41,13 +42,58 @@
 .Selection > h2 {
   width: 100%;
   font-size: 12px;
+  line-height: 20px;
 }
 
 .Display {
-  height: 100%;
   display: flex;
 }
 
+.Clear {
+  background: rgb(255, 100, 100);
+  outline: none;
+
+  border: 1px solid rgb(50, 50, 50);
+  border-radius: 2px;
+}
+
+.Clear:hover {
+  background: rgb(255, 60, 60);
+}
+
 @media (max-width: 1024px) {
+  .App {
+    overflow: auto;
+  }
+
+  .Header > h1 {
+    font-size: 20px;
+    margin: 0.75rem;
+  }
+
+  .Selection {
+    width: 20rem;
+    margin-bottom: 1rem;
+  }
+
+  .Selection > h2 {
+    font-size: 12px;
+  }
+
+  .Bottom {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .Selection > h2 {
+    font-size: 11px;
+    line-height: 10px;
+  }
+
+  .Clear {
+    font-size: 8px;
+    width: 4rem;
+    margin-top: 0.5rem;
+  }
 }
 

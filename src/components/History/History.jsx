@@ -4,7 +4,7 @@ import "./History.css";
 function History({ history, insertImage, removeHistory }) {
   return (
     <div className="History">
-      <h1>Upload History</h1>
+      <h1>Uploaded</h1>
       <div className="HistoryGrid">
         {history.map((image, i) => {
           return (

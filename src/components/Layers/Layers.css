@@ -1,6 +1,13 @@
 .Layers {
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.List {
   width: 6rem;
-  height: 750px;
+  height: 35rem;
 
   display: flex;
   flex-direction: column;
@@ -17,11 +24,30 @@
   background: white;
 }
 
-.Layers > h1 {
+.List > h1 {
   width: 100%;
 
   padding: 0.25rem;
   text-align: center;
 
   border-bottom: 1px solid black;
+}
+
+.Layers > button {
+  margin-top: 1rem;
+}
+
+@media (max-width: 1024px) {
+  .List {
+    width: 4rem;
+    height: 15rem;
+
+    font-size: 11px;
+
+    margin-top: 0.75rem;
+  }
+
+  .Layers > button {
+    margin-top: 0.5rem;
+  }
 }

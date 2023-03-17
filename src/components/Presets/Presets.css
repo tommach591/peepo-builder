@@ -13,17 +13,59 @@
   background: white;
 }
 
-.Presets > h1 {
+.PresetsHeader {
   width: 100%;
 
-  padding: 0.25rem;
+  padding-top: 0.25rem;
   text-align: center;
 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: none;
   border-bottom: 1px solid black;
+}
+
+.SelectType {
+  margin-right: 0.5rem;
+  margin-left: 0.5rem;
+
+  border-top: 1px solid black;
+  border-left: 1px solid black;
+  border-right: 1px solid black;
+
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+
+  padding-top: 0.1rem;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+}
+
+.SelectType:hover {
+  cursor: pointer;
 }
 
 .PresetsGrid {
   display: grid;
   grid-template-columns: repeat(5, 64px);
   gap: 6px;
+}
+
+@media (max-width: 1024px) {
+  .Presets {
+    height: 7rem;
+    margin: 0.5rem;
+  }
+
+  .SelectType {
+    margin-right: 0.25rem;
+    margin-left: 0.25rem;
+  }
+
+  .PresetsGrid {
+    grid-template-columns: repeat(5, 48px);
+    gap: 18px;
+  }
 }

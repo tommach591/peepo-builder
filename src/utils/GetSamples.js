@@ -14,20 +14,16 @@ import Hairclip_1 from "../assets/sample/hairclip1.png";
 import Hairclip_2 from "../assets/sample/hairclip2.png";
 import Hairclip_3 from "../assets/sample/hairclip3.png";
 
-export const getSamples = () => [
-  Skin_1,
-  Skin_2,
-  Skin_3,
-  Skin_4,
-  Skin_5,
-  Hair_1,
-  Ponytail_1,
-  Face_1,
-  Top_1,
-  Bottoms_1,
-  Bottoms_2,
-  Shoes_1,
-  Hairclip_1,
-  Hairclip_2,
-  Hairclip_3,
-];
+export const getBody = () => [Skin_1, Skin_2, Skin_3, Skin_4, Skin_5];
+
+export const getHair = () => [Hair_1, Ponytail_1];
+
+export const getFace = () => [Face_1];
+
+export const getTop = () => [Top_1];
+
+export const getBottom = () => [Bottoms_1, Bottoms_2];
+
+export const getShoes = () => [Shoes_1];
+
+export const getAccessory = () => [Hairclip_1, Hairclip_2, Hairclip_3];

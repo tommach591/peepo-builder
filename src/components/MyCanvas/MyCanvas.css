@@ -1,4 +1,6 @@
 .MyCanvas {
+  height: fit-content;
+
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -18,4 +20,23 @@
 
 .Download {
   margin: 1rem;
+}
+
+@media (max-width: 1024px) {
+  .MyCanvas {
+    margin: 0.75rem;
+  }
+
+  .MyCanvas > img {
+    width: 250px;
+    height: 250px;
+  }
+
+  .Download {
+    margin: 0.5rem;
+  }
+
+  .Download > button {
+    font-size: 10px;
+  }
 }

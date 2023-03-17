@@ -17,5 +17,17 @@
 }
 
 @media (max-width: 1024px) {
+  .UploadPicture {
+    margin: 0.5rem;
+  }
+
+  .UploadPicture > h1 {
+    font-size: 11px;
+  }
+
+  .UploadPicture > input {
+    width: 8rem;
+    font-size: 9px;
+  }
 }
 
