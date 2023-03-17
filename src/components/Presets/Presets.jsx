@@ -20,7 +20,7 @@ function Presets({ insertImage }) {
     hair: "https://api.iconify.design/mingcute:hair-2-fill.svg",
     face: "https://api.iconify.design/ic:sharp-tag-faces.svg",
     top: "https://api.iconify.design/tabler:shirt-filled.svg",
-    bottoms:
+    bottom:
       "https://api.iconify.design/icon-park-solid:clothes-pants-short.svg",
     shoes: "https://api.iconify.design/icon-park-solid:high-heeled-shoes.svg",
     accessory: "https://api.iconify.design/material-symbols:star.svg",
